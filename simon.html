@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: whitesmoke;
+        }
+        .btn{
+            width:200px;
+            height:200px;
+            margin:1rem;
+            border-radius: 50px;
+            
+        }
+        .yellow{
+            background-color: rgb(220, 220, 45);
+        }
+        .red{
+            background-color: rgb(228, 99, 99);
+        }
+        .violet{
+            background-color: rgb(200, 49, 200);
+        }
+        .blue{
+            background-color: rgb(76, 76, 219);
+        }
+        .flash{
+            background-color: white;
+        }
+        .userflash{
+            background-color: rgb(91, 220, 91);
+        }
+         .container{
+            border: 2px dotted black;
+            width:500px;
+            height:700px;
+            margin-left: 500px;
+            background-color: rgb(67, 216, 216);
+         }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Simon says Game</h1>
+    <h2>Press any key to Start the Game</h2>
+    <div class="box-Container">
+        <div class="first_line">
+            <button class="btn red" type="button" id="red"></button>
+            <button class="btn violet" type="button" id="violet"></button>
+            
+        </div>
+        <div class="second_line">
+            <button class="btn yellow" type="button" id="yellow" ></button>
+            <button class="btn blue" type="button" id="blue"></button>
+           
+        </div>
+    </div>
+      </div>
+
+
+    <script>
+
+ let gameseq=[];
+ let userseq=[];
+ let started=false;
+ let level=0;
+ let btns=["red","violet","yellow","blue"]
+ h2=document.querySelector("h2");
+ //Step1
+ document.addEventListener("keypress",function(){
+    if(started==false){
+    console.log("Game started");
+    started=true;  
+    levelUp();  
+     
+}
+ });
+ // step 1-a
+ function levelUp(){
+    userseq=[];
+     level++;
+ h2.innerText=`Level ${level}`;
+ //random no for flash//
+ let randIndex=Math.floor(Math.random()*4);
+ let randomColor=btns[randIndex];
+ let ranbtns=document.querySelector(`.${randomColor}`);
+ gameseq.push(randomColor);
+ console.log(gameseq);
+ gameFlash(ranbtns);
+    
+
+ }
+ function checkAns(idx){
+ if(userseq[idx]===gameseq[idx]){
+    if(userseq.length==gameseq.length){
+        setTimeout(levelUp,1000);
+    }
+ } else {
+    h2.innerHTML=`Game Over! Your score was <b> ${level}</b> Press any key to Start.`;
+    document.querySelector("body").style.backgroundColor="red";
+    setTimeout(function(){
+         document.querySelector("body").style.backgroundColor="white";
+    },150);
+    reset();
+ }
+ }
+
+  
+ //step 2
+  function gameFlash(btn){
+  btn.classList.add("flash");
+  setTimeout(function () {
+  btn.classList.remove("flash");
+  },250);
+  }
+  function userFlash(btn){
+  btn.classList.add("userflash");
+  setTimeout(function () {
+  btn.classList.remove("userflash");
+  },250);
+  }
+
+  //step 3
+  function btnpress(){
+   let btn=this;
+   userFlash(btn);
+ 
+
+   usercolor=btn.getAttribute("id");
+   userseq.push(usercolor);
+
+     checkAns(userseq.length-1);
+  };
+ 
+
+  let allbtns=document.querySelectorAll(".btn");
+  for(btn of allbtns){
+   btn.addEventListener("click",btnpress);
+  };
+
+  function reset(){
+    started=false;
+    gameseq=[];
+    userseq=[];
+    level=0;
+  }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+      .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .fill {
+      width: 0%;
+      height: 100%;
+      background-color: #4CAF50;
+    }
+    .percent {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>Downloading Progress</h3>
+        <div class="progress-bar">
+            <div class="fill"></div>
+        </div>
+        <div class="percent">0%</div>
+    </div>
+    <script>
+        let count=0;
+        let fill=document.querySelector(".fill");
+        let percent=document.querySelector(".percent");
+       setInterval(function(){
+        if(count<100){
+            count++;
+            fill.style.width=`${count}%`;
+            percent.textContent=`${count}%`;
+        }
+        else document.querySelector("h3").textContent="Downloaded"
+        
+            
+       },50);
+
+    </script>
+</body>
+</html>
