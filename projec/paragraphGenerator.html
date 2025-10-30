@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatic Paragraph Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Automatic Paragraph Generator</h1>
+
+  <input type="number" id="paraCount" placeholder="Enter number of paragraphs" min="1" max="10">
+  <button onclick="generateParagraphs()">Generate</button>
+
+  <div id="output"></div>
+
+  <script>
+    const sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed euismod, metus ut malesuada efficitur, erat purus tempor erat, sit amet tincidunt lacus odio ut sapien.";
+
+    function generateParagraphs() {
+      const count = document.getElementById('paraCount').value;
+      const output = document.getElementById('output');
+      output.innerHTML = ""; // clear previous content
+
+      if (count <= 0) {
+        output.innerHTML = "<p>Please enter a valid number.</p>";
+        return;
+      }
+
+      for (let i = 0; i < count; i++) {
+        const para = document.createElement('p');
+        para.textContent = sampleText;
+        output.appendChild(para);
+      }
+    }
+  </script>
+</body>
+</html>

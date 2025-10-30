@@ -1,0 +1,46 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body {
+  overflow-x: hidden; /* Stop horizontal scroll */
+  background-color: #c12995
+}
+.main{
+    background-color: aqua;
+    width: 100vw;
+    height: 100px;
+    display:flex;
+    justify-content: center;
+    gap: 0.2rem;
+    position:static;
+}
+h2{
+    color: rgb(21, 20, 20);
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+.box1 input{
+  width: 15rem;
+  padding: 10px;
+  margin-top: 17px;
+  border-radius: 10px;
+}
+.box2 button{
+     width: 7rem;
+     padding:10px;
+     margin-top: 17px;
+     border-radius: 10px;
+     font-size: 0.8rem;
+     color: white;
+     background-color: black;
+}
+.output{
+   
+    width: 100vw;
+   overflow-x: hidden;
+   overflow-y: auto;
+   text-align: center;
+    
+}
