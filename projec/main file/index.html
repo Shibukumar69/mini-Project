@@ -1,32 +1,80 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body{
-            background-color: rgb(33, 39, 35);
-            display:flex;
-            justify-content: center;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        }
-        button a{
-            text-decoration: none;
-            color: rgb(8, 8, 8);
-            font-size: 1.2rem;
-        }
-        button{
-            background-color: rgb(236, 221, 221);
-            padding:10px;
-            margin:12px;
-            width: 12.5rem;
-            height:12.5rem;
-        }
-       
-    </style>
+    body {
+      background-color: #212723;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    button {
+      background-color: #ece3e3;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      height: 150px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #d8cfcf;
+      transform: scale(1.05);
+    }
+
+    button a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        height: 120px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h1>My Mini Projects</h1>
+  <div class="grid-container">
     <button><a href="./colorgenerator.html">Color Generator</a></button>
     <button><a href="./currencycoverter.html">Currency Converter</a></button>
     <button><a href="./download.html">Download Animation</a></button>
@@ -34,7 +82,7 @@
     <button><a href="./todo.html">Todo App</a></button>
     <button><a href="../projec/Colour Generator/index1.html">Background Color</a></button>
     <button><a href="../projec/paragraph_Generator/paragrapGenerator.html">Paragraph Generator</a></button>
-    
-   
+    <button><a href="../password generator/index.html">Password Generator</a></button>
+  </div>
 </body>
 </html>
