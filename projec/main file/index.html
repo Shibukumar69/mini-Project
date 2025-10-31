@@ -38,7 +38,11 @@
       max-width: 900px;
     }
 
-    button {
+    /* Button-style links */
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #ece3e3;
       border: none;
       border-radius: 10px;
@@ -47,17 +51,14 @@
       font-size: 1.2rem;
       cursor: pointer;
       transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #d8cfcf;
-      transform: scale(1.05);
-    }
-
-    button a {
-      text-decoration: none;
       color: #111;
       font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #d8cfcf;
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
@@ -65,7 +66,7 @@
         font-size: 1.5rem;
       }
 
-      button {
+      .btn {
         height: 120px;
         font-size: 1rem;
       }
@@ -75,16 +76,16 @@
 <body>
   <h1>My Mini Projects</h1>
   <div class="grid-container">
-    <button><a href="./colorgenerator.html">Color Generator</a></button>
-    <button><a href="./currencycoverter.html">Currency Converter</a></button>
-    <button><a href="./download.html">Download Animation</a></button>
-    <button><a href="./simon.html">Simon Game</a></button>
-    <button><a href="./todo.html">Todo App</a></button>
-    <button><a href="../projec/Colour Generator/index1.html">Background Color</a></button>
-    <button><a href="../projec/paragraph_Generator/paragrapGenerator.html">Paragraph Generator</a></button>
-    <button><a href="../password generator/index.html">Password Generator</a></button>
-    <button><a href="../ageCalculator/index.html">Age Calculate</a></button>
-    <button><a href="../todo app/index.html">Todo List</a></button>
+    <a href="../basic/colorgenerator.html" class="btn">Color Generator</a>
+    <a href="../basic/currencycoverter.html" class="btn">Currency Converter</a>
+    <a href="../basic/download.html" class="btn">Download Animation</a>
+    <a href="../basic/simon.html" class="btn">Simon Game</a>
+    <a href="../basic/todo.html" class="btn">Todo App</a>
+    <a href="../Colour Generator/index1.html" class="btn">Background Color</a>
+    <a href="../paragraph_Generator/paragrapGenerator.html" class="btn">Paragraph Generator</a>
+    <a href="../password generator/index.html" class="btn">Password Generator</a>
+    <a href="../ageCalculator/index.html" class="btn">Age Calculate</a>
+    <a href="../todo app/index.html" class="btn">Todo List</a>
   </div>
 </body>
 </html>
